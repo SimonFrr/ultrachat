@@ -14,15 +14,15 @@
     </div>
     <div class="row">
       <div class="col-xs-12">
-        {{#each tasks}}
-          {{> task}}
+        {{#each messages}}
+          {{> message}}
         {{/each}}
       </div>
     </div>
   </div>
 </body>
 
-<template name="task">
+<template name="message">
   <div class="alert alert-info">
     {{text}}
   </div>
