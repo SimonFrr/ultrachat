@@ -5,11 +5,8 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-6">
-        ULTRACHAT
-      </div>
-      <div class="col-xs-6">
-        YOUR NAME
+      <div class="col-xs-12 app-title">
+          ULTRACHAT
       </div>
     </div>
     <div class="row">
@@ -19,10 +16,28 @@
         {{/each}}
       </div>
     </div>
+    <div class="row">
+      <form id="new-message">
+        <div class="col-xs-3">
+          <label for="name">Your name</label>
+          <input class="form-control" type="text" name="name" id="name">
+        </div>
+        <div class="col-xs-6">
+          <label for="text">Your message</label>
+          <input class="form-control" type="text" name="text" id="text">
+        </div>
+        <div class="col-xs-3">
+          <input class="form-control" type="submit">
+        </div>
+      </form>
+    </div>
   </div>
 </body>
 
 <template name="message">
+  <div class="alert alert-success">
+    {{name}}
+  </div>
   <div class="alert alert-info">
     {{text}}
   </div>

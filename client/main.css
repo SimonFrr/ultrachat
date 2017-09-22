@@ -1,1 +1,9 @@
-/* CSS declarations go here */
+.app-title {
+  color: green;
+  background-color: pink;
+  font: italic 4em bolder;
+}
+
+.name-selector {
+  background-color: blue;
+}
