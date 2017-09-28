@@ -5,13 +5,12 @@ import './main.html';
 
 Template.body.helpers({
   messages() {
-    return Messages.find({});
+    return Messages.find({}, { sort: { createdAt: -1 } });
   }
 });
 
 Template.body.events({
   'submit #new-message'(event) {
-    console.log("'bla'");
     // Prevent default browser form submit
     event.preventDefault();
 
@@ -19,6 +18,11 @@ Template.body.events({
     const target = event.target;
     const name = target.name.value;
     let text = target.text.value;
+
+    if (name === "" || text === "") {
+      return;
+    }
+
     text = modify(text);
 
     // Insert a task into the collection
@@ -28,16 +32,24 @@ Template.body.events({
       createdAt: new Date(), // current time
     });
 
-    // Clear form
+    // Clear text
     target.text.value = '';
   },
 });
 
+const modifiers = [
+  text => text.toUpperCase(),
+  text => {
+    return text
+      .replace(/a/g, "")
+      .replace(/e/g, "")
+      .replace(/i/g, "")
+      .replace(/o/g, "")
+      .replace(/u/g, "")
+  }
+];
+
 const modify = text => {
-  return text
-    .replace(/a/g, "")
-    .replace(/e/g, "")
-    .replace(/i/g, "")
-    .replace(/o/g, "")
-    .replace(/u/g, "")
+  const index = Math.floor(Math.random() * modifiers.length);
+  return modifiers[index](text);
 }

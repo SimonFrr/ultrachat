@@ -6,39 +6,39 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 app-title">
-          ULTRACHAT
+        ULTRACHAT
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12">
-        {{#each messages}}
-          {{> message}}
-        {{/each}}
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <form id="new-message" class="form-horizontal">
+          <div class="form-group">
+            <div class="col-xs-3">
+              <input class="form-control input-lg" type="text" name="name" id="name" placeholder="Your name">
+            </div>
+            <div class="col-xs-7">
+              <input class="form-control input-lg" type="text" name="text" id="text" placeholder="Your message">
+            </div>
+            <div class="col-xs-2">
+              <button class="form-control input-lg btn-primary" type="submit">
+                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          {{#each messages}}
+            {{> message}}
+          {{/each}}
+        </form>
       </div>
-    </div>
-    <div class="row">
-      <form id="new-message">
-        <div class="col-xs-3">
-          <label for="name">Your name</label>
-          <input class="form-control" type="text" name="name" id="name">
-        </div>
-        <div class="col-xs-6">
-          <label for="text">Your message</label>
-          <input class="form-control" type="text" name="text" id="text">
-        </div>
-        <div class="col-xs-3">
-          <input class="form-control" type="submit">
-        </div>
-      </form>
     </div>
   </div>
 </body>
 
 <template name="message">
-  <div class="alert alert-success">
-    {{name}}
-  </div>
-  <div class="alert alert-info">
-    {{text}}
+  <div class="form-group">
+    <label class="col-xs-3 control-label">{{name}}</label>
+    <div class="col-xs-9">
+      <p class="form-control-static">{{text}}</p>
+    </div>
   </div>
 </template>
