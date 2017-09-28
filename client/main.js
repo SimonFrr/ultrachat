@@ -38,7 +38,19 @@ Template.body.events({
 });
 
 const modifiers = [
+  text => "J'adore François Fillon",
+  text => "Sérieux ?",
+  text => "Alors après, voilà ! " + text,
+  text => "Donc si tu veux, " + text,
+  text => "Je suis pas raciste, mais " + text,
+  text => text + " GROS BOLOSS!",
+  text => text + ". Sad!",
   text => text.toUpperCase(),
+  text => text.split("").reverse().join(""),
+  text => text.split("").join(" "),
+  text => text.split("").join("/"),
+  text => text.split(" ").join(" bite "),
+  text => text.replace(/e/g, "EEE"),
   text => {
     return text
       .replace(/a/g, "")
@@ -46,10 +58,15 @@ const modifiers = [
       .replace(/i/g, "")
       .replace(/o/g, "")
       .replace(/u/g, "")
+      .replace(/y/g, "")
   }
 ];
 
 const modify = text => {
+  // Leave half of the messages intact
+  if (Math.random() < 0.5) {
+    return text;
+  }
   const index = Math.floor(Math.random() * modifiers.length);
   return modifiers[index](text);
 }

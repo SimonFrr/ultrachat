@@ -16,7 +16,7 @@
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-        <form id="new-message" class="form-horizontal">
+        <form id="new-message" class="form-horizontal" autocomplete="off">
           <div class="form-group">
             <div class="col-xs-3">
               <input class="form-control" type="text" name="name" id="name" placeholder="Your name">
@@ -25,7 +25,7 @@
               <input class="form-control" type="text" name="text" id="text" placeholder="Your message">
             </div>
             <div class="col-xs-2">
-              <button class="form-control btn-primary" type="submit">
+              <button class="form-control btn-danger" type="submit">
                 <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
               </button>
             </div>
@@ -40,7 +40,7 @@
 </body>
 
 <template name="message">
-  <div class="form-group">
+  <div class="form-group message">
     <label class="col-xs-3 control-label">{{name}}</label>
     <div class="col-xs-9">
       <p class="form-control-static">{{text}}</p>

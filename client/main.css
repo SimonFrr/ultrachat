@@ -18,6 +18,10 @@ body {
   color: blue;
 }
 
+.message {
+  margin-bottom: 5px;
+}
+
 .form-horizontal .control-label {
   padding-top: 7px;
   margin-bottom: 0;
