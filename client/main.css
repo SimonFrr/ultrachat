@@ -1,6 +1,25 @@
-.app-title {
-  color: green;
+body {
+  background-color: moccasin;
+}
+
+.app-header {
   background-color: pink;
-  font: italic 4em bolder;
   margin-bottom: 15px;
+  text-align: center;
+}
+
+.app-title {
+  font: italic 4em bolder;
+  color: green;
+}
+
+.app-subtitle {
+  font: italic 2em bolder;
+  color: blue;
+}
+
+.form-horizontal .control-label {
+  padding-top: 7px;
+  margin-bottom: 0;
+  text-align: right;
 }
