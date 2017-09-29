@@ -1,5 +1,6 @@
 <head>
   <title>ultrachat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 <body>
@@ -15,19 +16,21 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
         <form id="new-message" class="form-horizontal" autocomplete="off">
           <div class="form-group">
-            <div class="col-xs-3">
+            <div class="col-xs-4 col-sm-3">
               <input class="form-control" type="text" name="name" id="name" placeholder="Nom">
             </div>
-            <div class="col-xs-7">
-              <input class="form-control" type="text" name="text" id="text" placeholder="Message">
-            </div>
-            <div class="col-xs-2">
-              <button class="form-control btn-danger" type="submit">
-                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-              </button>
+            <div class="col-xs-8 col-sm-9">
+              <div class="input-group">
+                <input class="form-control" type="text" name="text" id="text" placeholder="Message">
+                <span class="input-group-btn">
+                  <button class="btn btn-danger" type="submit">
+                    <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+                  </button>
+                </span>
+              </div>
             </div>
           </div>
           {{#each messages}}
@@ -41,9 +44,9 @@
 
 <template name="message">
   <div class="form-group message">
-    <label class="col-xs-3 control-label">{{name}}</label>
-    <div class="col-xs-9">
-      <p class="form-control-static">{{text}}</p>
+    <label class="col-xs-4 col-sm-3 control-label ultra-name">{{name}}</label>
+    <div class="col-xs-8 col-sm-9">
+      <p class="form-control-static ultra-message">{{text}}</p>
     </div>
   </div>
 </template>

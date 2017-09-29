@@ -9,12 +9,13 @@ body {
 }
 
 .app-title {
-  font: italic 4em bolder;
+  font: italic 3em bolder;
   color: green;
 }
 
 .app-subtitle {
-  font: italic 2em bolder;
+  white-space: nowrap;
+  font: italic 1.5em bolder;
   color: blue;
 }
 
@@ -22,8 +23,12 @@ body {
   margin-bottom: 5px;
 }
 
-.form-horizontal .control-label {
+.ultra-name {
   padding-top: 7px;
   margin-bottom: 0;
   text-align: right;
+}
+
+.ultra-name, .ultra-message {
+  overflow-wrap: break-word;
 }
