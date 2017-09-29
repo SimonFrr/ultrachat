@@ -17,7 +17,11 @@ Template.body.events({
     // Get value from form element
     const target = event.target;
     const name = target.name.value;
-    let text = target.text.value;
+    const textField = target.text;
+    let text = textField.value;
+
+    // Refocus on text field
+    textField.focus();
 
     if (name === "" || text === "") {
       return;
